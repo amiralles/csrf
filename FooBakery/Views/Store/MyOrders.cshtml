@@ -1,0 +1,33 @@
+﻿@model IQueryable<FooBakery.Models.Order>
+
+@{
+    ViewBag.Title = "Place your order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your orders</h2>
+
+<table>
+    @{
+        var orders = Model.ToList();
+        if (orders.Count!=0) {
+            <tr>
+                <td>Order Id</td>
+                <td>Product</td>
+                <td>Ammount</td>
+                <td>Delivered to</td>
+            </tr>
+            foreach (var order in orders) {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.ProductName</td>
+                    <td>@order.Price</td>
+                    <td>@order.DeliveryAddress</td>
+                </tr>
+            }
+        }
+        else {
+            <h2>You have no orders yet</h2>
+        }
+    }
+</table>

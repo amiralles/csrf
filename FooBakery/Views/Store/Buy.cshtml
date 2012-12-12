@@ -1,0 +1,29 @@
+﻿@model FooBakery.Models.DealViewModel
+
+@{
+    ViewBag.Title = "Place your order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Place your order</h2>
+@using (Html.BeginForm("Buy", "Store", new { order = Model })) {     
+      
+    <div>
+        <input type="hidden" name="productId" value="@Model.ProductId"/>
+    </div>    
+    <div>Product: </div>
+    <div>
+        <input type="text" readonly="readonly" name="productName" value="@Model.ProductName"/>
+    </div>
+    <div>Price: </div>
+    <div>
+        <input type="text" readonly="readonly" name="price" value="@Model.Price"/>
+    </div>
+    <div>Delivery Address:</div>
+    <div>
+        <input type="text" name="deliveryAddress" value="@Model.DeliveryAddress"/>
+    </div>
+    <div>
+        <input type="submit" value="Checkout" />
+    </div>
+}

@@ -1,0 +1,17 @@
+﻿@model List<FooBakery.Models.DealViewModel>
+
+@{
+    ViewBag.Title = "Today's deals";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Today's deals</h2>
+<table>
+    @foreach (var deal in Model) {
+        <tr>
+            <td>@deal.ProductName</td>
+            <td>@deal.Price</td>
+            <td>@Html.ActionLink("Buy", "Buy", "Store", new { productId = deal.ProductId },null)</td>
+        </tr>
+    }
+</table>
